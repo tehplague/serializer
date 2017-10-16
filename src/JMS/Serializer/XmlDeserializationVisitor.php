@@ -76,7 +76,7 @@ class XmlDeserializationVisitor extends AbstractVisitor implements NullAwareVisi
             }
         }
 
-        $doc = simplexml_load_string($data);
+        $doc = simplexml_load_string($data, 'SimpleXMLElement', LIBXML_COMPACT | LIBXML_PARSEHUGE);
 
         libxml_use_internal_errors($previous);
         libxml_disable_entity_loader($previousEntityLoaderState);
